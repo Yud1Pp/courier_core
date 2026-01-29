@@ -57,3 +57,28 @@ class CourierIncident(models.Model):
   )
   
   resolved_at = fields.Datetime(readonly=True)
+
+  _sql_constraints = [
+    (
+      "incident_unique",
+      "unique(customer_id, incident_type, incident_datetime)",
+      "Incident already exists for this customer and time.",
+    )
+  ]
+
+  def action_mark_followup(self):
+    self.write({"state": "followup"})
+    
+  def action_resolve(self):
+    self.write({
+        "state": "done",
+        "resolved_at": fields.Datetime.now(),
+    })
+    
+  @api.constrains("state", "followup_note")
+  def _check_followup_note(self):
+    for rec in self:
+      if rec.state == "done" and not rec.followup_note:
+        raise ValidationError(
+          "Follow-up note is required before resolving the incident."
+        )
