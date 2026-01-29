@@ -9,14 +9,15 @@ class CourierIncident(models.Model):
   name = fields.Char(required=True)
 
   customer_id = fields.Many2one(
-    "courier.customer",
+    "res.partner",
     string="Customer",
     required=True,
-  )
-  
+)
+
   shipment_id = fields.Many2one(
-    "courier.shipment",
-    string="Shipment",
+      "res.partner",
+      string="Shipment / Resi",
+      required=True,
   )
   
   incident_type = fields.Selection(
