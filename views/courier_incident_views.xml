@@ -70,6 +70,11 @@
     </record>
 
     <menuitem
+      id="menu_courier_root"
+      name="Courier"
+      sequence="10"/>
+
+    <menuitem
       id="menu_courier_incident"
       name="Log Insiden"
       parent="menu_courier_root"
