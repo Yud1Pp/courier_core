@@ -66,6 +66,13 @@ class CourierIncident(models.Model):
       "Incident already exists for this customer and time.",
     )
   ]
+  
+  def write(self, vals):
+    if vals.get("state") == "done":
+      for rec in self:
+        if not rec.resolved_at:
+          vals["resolved_at"] = fields.Datetime.now()
+    return super().write(vals)
 
   def action_mark_followup(self):
     self.write({"state": "followup"})
