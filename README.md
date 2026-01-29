@@ -55,12 +55,13 @@ Modul Odoo sederhana untuk mencatat dan mengelola insiden operasional kurir di B
 
 ### 3️⃣ Resolve Incident (Status: Done)
 
-1. Pastikan field **Catatan Tindak Lanjut** sudah terisi.
-2. Klik tombol **Done**.
-3. Sistem akan:
+1. Buka data insiden yang masih berstatus **Draft**.
+2. Pastikan field **Catatan Tindak Lanjut** sudah terisi.
+3. Klik tombol **Done**.
+4. Sistem akan:
    - Mengubah status menjadi **Done**
    - Mengisi field **Resolved At** secara otomatis
-4. Data insiden dinyatakan selesai.
+5. Data insiden dinyatakan selesai.
 
 ---
 
