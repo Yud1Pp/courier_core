@@ -27,38 +27,38 @@
         <form string="Incident">
           <header>
             <field name="state" widget="statusbar" statusbar_visible="draft,followup,done" />
-            <sheet>
-              <div class="oe_title">
-                <h1>
-                  <field name="name" placeholder="Judul Insiden"/>
-                </h1>
-              </div>
-
-              <group>
-                <group>
-                  <field name="customer_id"/>
-                  <field name="shipment_id"/>
-                </group>
-                <group>
-                  <field name="incident_type"/>
-                  <field name="severity"/>
-                  <field name="incident_datetime"/>
-                </group>
-              </group>
-
-              <notebook>
-                <page string="Kronologi">
-                  <field name="description"/>
-                </page>
-
-                <page string="Tindak Lanjut">
-                  <field name="followup_note"/>
-                  <field name="resolved_at" readonly="1"/>
-                </page>
-              </notebook>
-
-            </sheet>
           </header>
+
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" placeholder="Judul Insiden"/>
+              </h1>
+            </div>
+
+            <group>
+              <group>
+                <field name="customer_id"/>
+                <field name="shipment_id"/>
+              </group>
+              <group>
+                <field name="incident_type"/>
+                <field name="severity"/>
+                <field name="incident_datetime"/>
+              </group>
+            </group>
+
+            <notebook>
+              <page string="Kronologi">
+                <field name="description"/>
+              </page>
+
+              <page string="Tindak Lanjut">
+                <field name="followup_note"/>
+                <field name="resolved_at" readonly="1"/>
+              </page>
+            </notebook>
+          </sheet>
         </form>
       </field>
     </record>
