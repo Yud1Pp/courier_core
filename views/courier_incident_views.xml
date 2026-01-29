@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="courier_incident_view_tree" model="ir.ui.view">
+      <field name="name">courier.incident.tree</field>
+      <field name="model">courier.incident</field>
+      <field name="arch" type="xml">
+        <list
+          decoration-warning="state == 'followup'"
+          decoration-success="state == 'done'"
+        >
+          <field name="incident_datetime"/>
+            <field name="name"/>
+            <field name="customer_id"/>
+            <field name="shipment_id"/>
+            <field name="incident_type"/>
+            <field name="severity"/>
+            <field name="state"/>
+        </list>
+      </field>
+    </record>
+  </data>
+</odoo>
